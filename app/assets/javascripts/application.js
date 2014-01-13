@@ -12,11 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
 //= require_tree .
 
 function hello_world() {
   	$(document).ready(function(){	
 		alert("Hello from Jquery");
+	});
+}
+
+function jqueryui_test_dialog() {
+	$(document).ready(function(){		
+$(function() {
+			$( "#dialog" ).dialog();
+		});
 	});
 }
