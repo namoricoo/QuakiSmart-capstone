@@ -1,1 +1,2 @@
-== QuakiSmart
+QuakiSmart
+===========
