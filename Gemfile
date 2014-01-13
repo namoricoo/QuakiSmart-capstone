@@ -21,7 +21,7 @@ group :test do
   # Uncomment this line on OS X.
   gem 'growl'
   gem 'guard-rspec'
-  gem 'rspec-rails'  
+  gem 'rspec-rails'
 end
 
 group :doc do
@@ -34,4 +34,4 @@ end
 #At the end of Gemfile add:
 group :production do
   gem 'rails_12factor'
-end 
+end

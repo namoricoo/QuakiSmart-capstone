@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function hello_world() {
+  	$(document).ready(function(){	
+		alert("Hello from Jquery");
+	});
+}
