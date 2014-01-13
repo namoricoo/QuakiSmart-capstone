@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.1.1'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'rb-fsevent', '~> 0.9.4'
 
 group :test do
   gem 'selenium-webdriver'
