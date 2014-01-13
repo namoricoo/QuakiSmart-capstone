@@ -12,6 +12,7 @@ require "sprockets/railtie"
 Bundler.require(:default, Rails.env)
 
 module QuakismartBootstrap
-  class Application < Rails::Application     
+  class Application < Rails::Application
+    config.assets.compress = false
   end
 end
