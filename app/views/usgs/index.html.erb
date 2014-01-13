@@ -1,1 +1,32 @@
 <p>Hello World from Quakismart</p>
+
+<div style="position: relative; padding: 200px;">
+    <input type="text" id="range_1" />
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function(){
+
+        $("#range_1").ionRangeSlider({
+        	src: "<%= asset_path('logo.png') %>",
+            min: 0,
+            max: 5000,
+            from: 1000,
+            to: 4000,
+            type: 'double',
+            step: 1,
+            prefix: "$",
+            prettify: true,
+            hasGrid: true
+        });
+
+    });
+</script>
