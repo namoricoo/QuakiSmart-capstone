@@ -28,6 +28,17 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# Twitter Bootstrap
+
+gem "therubyracer"
+#gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+
+
+
+
 # Help Heroku handle images
 gem 'rack-cache'
 gem 'dalli'
