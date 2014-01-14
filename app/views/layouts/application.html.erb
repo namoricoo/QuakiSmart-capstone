@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<div id="site-container">	
 	<div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -31,10 +32,21 @@
         </div>
       </div>
     </div>
-  </div>
-	
+  </div>	
 	<div class="container">
 		<%= yield %>
 	</div>
+	
+	<footer class="quaki-footer">
+	  <div class="quaki-footer-inner">
+	<p><a href="#">Analytics</a> | <a href="#">About Us</a> | <a href="#">Github</a></p>
+	<p>Copyright © 2013. Portland Code School. All Rights Reserved. Napoleon Kernessant, final Project</p>
+	  </div>
+	</footer>
+</div>
+
+<script>
+   sliderLogic();
+</script>	
 </body>
 </html>
