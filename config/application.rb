@@ -12,7 +12,7 @@ require "sprockets/railtie"
 Bundler.require(:default, Rails.env)
 
 module QuakismartBootstrap
-  class Application < Rails::Application
-    config.assets.compress = false
+  class Application < Rails::Application    
+    config.cache_store = :dalli_store
   end
 end
