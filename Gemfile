@@ -30,7 +30,6 @@ group :doc do
 end
 
 # Twitter Bootstrap
-
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -45,6 +44,8 @@ gem 'memcachier'
 
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # Heroku integration has previously relied on using the Rails plugin system, which has been removed from Rails 4.
 # To enable features such as static asset serving and logging on Heroku please add rails_12factor gem to your Gemfile.

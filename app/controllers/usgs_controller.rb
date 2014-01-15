@@ -17,11 +17,11 @@ class UsgsController < ApplicationController
     seed_database_with_data(@table_body)
     
     
-    #@earthquakes = Earthquake.all
-    # @earthquake_hash = Gmaps4rails.build_markers(@earthquakes) do |earthquake, marker|
-      # marker.lat earthquake.latitude
-      # marker.lng earthquake.longitude
-    # end    
+    @earthquakes = Earthquake.all
+    @earthquake_hash = Gmaps4rails.build_markers(@earthquakes) do |earthquake, marker|
+      marker.lat earthquake.latitude
+      marker.lng earthquake.longitude
+    end    
   end
 
   def seed_database_with_data(seed_hash_array)

@@ -16,6 +16,8 @@
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap3
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 function hello_world() {
@@ -88,6 +90,7 @@ function dataTableFunction(){
 		// For fixed width containers
 		$('#customers').dataTable({
 		  sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+		  "aaSorting": [[ 0, "desc" ]],
     	  sPaginationType: "bootstrap"
 		});
 	});
