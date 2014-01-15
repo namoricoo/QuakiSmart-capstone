@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery.ui.all
-//= require turbolinks
+//= require twitter/bootstrap
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap3
 //= require_tree .
 
 function hello_world() {
@@ -81,3 +82,17 @@ function sliderLogic(){
 
     });
 }
+
+function dataTableFunction(){
+	$(document).ready(function(){
+		// For fixed width containers
+		$('#customers').dataTable({
+		  sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+    	  sPaginationType: "bootstrap"
+		});
+	});
+}	
+
+
+    
+

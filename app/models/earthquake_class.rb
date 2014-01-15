@@ -37,7 +37,8 @@ class EarthquakeClass < ActiveRecord::Base
     table_header_hash['latitude'] = 'Latitude'
     table_header_hash['longitude'] = 'Longitude'
     table_header_hash['felt'] = 'Felt'
-    table_header_hash['tsunami'] = 'Tsunami'   
+    table_header_hash['tsunami'] = 'Tsunami'
+    table_header_hash['cdi'] = 'Cdi' 
     table_header_hash['dmin'] = 'Dimension'
     table_header_hash
   end

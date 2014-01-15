@@ -36,17 +36,16 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 
 
-
-
-
 # Help Heroku handle images
 gem 'rack-cache'
 gem 'dalli'
 # While optional, it is also recommended to install the faster kgio IO system:
 gem 'kgio'
+gem 'memcachier'
+
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 
-gem "memcachier"
 # Heroku integration has previously relied on using the Rails plugin system, which has been removed from Rails 4.
 # To enable features such as static asset serving and logging on Heroku please add rails_12factor gem to your Gemfile.
 #At the end of Gemfile add:
