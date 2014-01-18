@@ -1,0 +1,108 @@
+<%= form_tag("usgs/search", method: "post", class: 'earthquake_sliders') do %>
+	<%= text_field_tag('person_name') %>
+	<label for="magnitude_range">Magnitude</label>
+	<%= text_field_tag('magnitude_range') %>
+	<label for="felt_range">Felt</label>
+	<%= text_field_tag('felt_range') %>
+	<label for="dimension_range">Dimension</label>
+	<%= text_field_tag('dimension_range') %>
+	<label for="cdi_range">Cdi</label>
+	<%= text_field_tag('cdi_range') %>
+ 	<button  class="submitButton" type="submit">Search</button>
+<% end %>
+
+<script>
+	function sliderLogic(){
+	 $(document).ready(function(){
+		var previous_from = 0;
+		var previous_to = 0;
+        $("#magnitude_range").ionRangeSlider({
+            min: -1.0,
+            max: 10.0,
+            from: 0.2,
+            to: 6,
+            type: 'double',
+            step: 0.1,
+            prettify: false,
+            hasGrid: true,
+            onChange: function(obj){        // function-callback, is called on every change
+            	 if(previous_from != obj.fromNumber)
+            	 {
+            	 	console.log("from: ", obj.fromNumber);
+            	 	previous_from = obj.fromNumber;
+            	 }
+            	 else if(previous_to != obj.toNumber)
+            	 {
+            	 	console.log("  to: ", obj.toNumber);
+            	 	previous_to =  obj.toNumber;
+            	 }
+            	 else
+            	 {
+            	 	previous_from = obj.fromNumber;
+            	 	previous_to =  obj.toNumber;
+            	 }
+            	
+            	
+        		
+            	
+            	// jQuery.ajax({
+				  // url: usgs/search,
+				  // type: 'Post',
+				  // dataType: 'script',
+				  // data: jQuery("#magnitude_range").val()
+				// });
+            	
+		        //console.log("magnitude max & min values="+ jQuery("#magnitude_range").val());
+		    }
+        });
+        
+              
+        $("#felt_range").ionRangeSlider({
+            min: 44,
+            max: 843,
+            from: 144,
+            to:544,
+            type: 'double',
+            step: 10,
+            prettify: false,
+            hasGrid: true,
+            onFromChange: function(fromValue){        // function-callback, is called on every change
+		        console.log("felt from value"+ fromValue);
+		    },
+            onToChange: function(toValue){        // function-callback, is called on every change
+		        console.log("felt to value"+ toValue);
+		    }
+        });
+        
+         $("#dimension_range").ionRangeSlider({
+            min: 0.4,
+            max: 7.0,
+            from: 1,
+            to: 5,
+            type: 'double',
+            step: 0.5,
+            prettify: false,
+            hasGrid: true,
+            onChange: function(obj){        // function-callback, is called on every change
+            	console.log("dimension max "+ jQuery("#dimension_range").max);
+		        console.log("dimension max & min values="+ jQuery("#dimension_range").val());
+		    }
+        });
+        
+         $("#cdi_range").ionRangeSlider({
+            min: 0.0,
+            max: 10.0,
+            from: 2.0,
+            to: 6.0,
+            type: 'double',
+            step: 0.1,
+            prettify: false,
+            hasGrid: true,
+            onChange: function(obj){        // function-callback, is called on every change
+		        console.log("cdi max & min values="+ jQuery("#cdi_range").val());
+		    }
+        });
+
+    });
+}
+</script>

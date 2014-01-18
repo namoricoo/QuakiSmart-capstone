@@ -47,6 +47,9 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 gem 'geocoder'
 gem 'gmaps4rails'
 
+#passing data from rails to javascript
+gem "gon", "~> 5.0.1"
+
 # Heroku integration has previously relied on using the Rails plugin system, which has been removed from Rails 4.
 # To enable features such as static asset serving and logging on Heroku please add rails_12factor gem to your Gemfile.
 #At the end of Gemfile add:
