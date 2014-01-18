@@ -24,12 +24,18 @@ class UsgsController < ApplicationController
     @earthquake_hash = get_gmaps4rails_hash(@earthquakes)
   end
 
-  def search
-    @sample_one = params[:person_name]
+  def search   
     @magnitude_range =  params[:magnitude_range]
+    @felt_range = params[:felt_range]
+    @dimension_range = params[:dimension_range]
+    @cdi_range = params[:cdi_range]
+    @tsunami = params[:tsunami].to_s
     puts "--------------------------------------"
-    puts "@sample_one= #{@sample_one}"
-     puts "@magnitude_range= #{@magnitude_range}"
+    puts "@magnitude_range= #{@magnitude_range}"
+    puts "@felt_range= #{@felt_range}"
+    puts "@dimension_range= #{@dimension_range}"
+    puts "@cdi_range= #{@cdi_range}"
+    puts "@tsunami= #{@tsunami}"
   end
 
   def get_gmaps4rails_hash(arthquakes)
