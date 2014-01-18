@@ -7,14 +7,15 @@
 	<%= text_field_tag('dimension_range') %>
 	<%= label_tag('cdi_range','Cdi') %>	
 	<%= text_field_tag('cdi_range') %>	
+	<%= label_tag('tsunami','Tsunami') %>	
+	<%= check_box_tag('tsunami', false) %>
+	<br />
 	<br />
 	<%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset",:class => 'btn btn-danger btn-lg' }) %>
 	&nbsp;
 	&nbsp;
 	&nbsp;
-	<%= submit_tag("Search",{:class => 'btn btn-success btn-lg'}) %>
-	<!-- btn btn-success  btn btn-primary-->
- 	<!-- <button  class="submitButton" type="submit">Search</button> -->
+	<%= submit_tag("Search",{:class => 'btn btn-success btn-lg'}) %>	
 <% end %>
 
 <script>
