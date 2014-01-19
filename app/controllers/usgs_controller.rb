@@ -31,6 +31,7 @@ class UsgsController < ApplicationController
     @magnitude_from_value = SliderData.get_from_value(@magnitude_range);
     @magnitude_to_value = SliderData.get_to_value(@magnitude_range);
     
+    @earthquakes = Earthquake.where( mag:  @magnitude_from_value)
     @felt_range = params[:felt_range]
     @dimension_range = params[:dimension_range]
     @cdi_range = params[:cdi_range]
