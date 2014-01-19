@@ -78,7 +78,18 @@ class GeoJsonHhelper < ActiveRecord::Base
   def set_earthquake_properties(properties_hash, earthquake)
     title_hash = earthquake.title_hash
     properties_hash.each do |key, value|
-      earthquake.set_field(title_hash[key], value) if title_hash[key]
+      if title_hash[key]
+        value = format_value(value)
+        earthquake.set_field(title_hash[key], value)
+      end       
     end
+  end
+
+  def format_value(input)
+      if input.nil?
+        output = 0
+      else
+        input 
+      end
   end
 end

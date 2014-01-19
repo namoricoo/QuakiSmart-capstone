@@ -39,9 +39,9 @@ class UsgsController < ApplicationController
     @felt_range = params[:felt_range]
     @dimension_range = params[:dimension_range]
     @cdi_range = params[:cdi_range]
-    @tsunami = params[:tsunami].to_s
-    puts "----------------------------------------"
-    puts "@magnitude_range= #{@table_body}"   
+    @tsunami = params[:tsunami]
+    
+    @earthquake_hash = get_gmaps4rails_hash(@table_body)
   end
 
   def get_gmaps4rails_hash(arthquakes)
