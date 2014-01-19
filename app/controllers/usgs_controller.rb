@@ -26,23 +26,22 @@ class UsgsController < ApplicationController
     @earthquake_hash = get_gmaps4rails_hash(@earthquakes)
   end
 
-  def search   
+  def search
+    earthquake_class = EarthquakeClass.new
+    @table_header =  earthquake_class.get_table_header
+     
     @magnitude_range =  params[:magnitude_range]
     @magnitude_from_value = SliderData.get_from_value(@magnitude_range);
     @magnitude_to_value = SliderData.get_to_value(@magnitude_range);
     
-    @earthquakes = Earthquake.where( mag:  @magnitude_from_value)
+    @table_body = Earthquake.find_all_by_mag(@magnitude_from_value..@magnitude_to_value)
+    
     @felt_range = params[:felt_range]
     @dimension_range = params[:dimension_range]
     @cdi_range = params[:cdi_range]
     @tsunami = params[:tsunami].to_s
-    puts "--------------------------------------"
-    puts "@magnitude_range= #{@magnitude_range}"
-    puts " @magnitude_from_value= #{@magnitude_from_value} "
-    puts "@felt_range= #{@felt_range}"
-    puts "@dimension_range= #{@dimension_range}"
-    puts "@cdi_range= #{@cdi_range}"
-    puts "@tsunami= #{@tsunami}"
+    puts "----------------------------------------"
+    puts "@magnitude_range= #{@table_body}"   
   end
 
   def get_gmaps4rails_hash(arthquakes)

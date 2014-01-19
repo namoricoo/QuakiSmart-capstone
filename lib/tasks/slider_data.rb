@@ -1,3 +1,4 @@
+# slider data looks like this first_number;second_number
 class SliderData
   def self.get_from_value(input_string)    
     colon_location = input_string.index(';')
