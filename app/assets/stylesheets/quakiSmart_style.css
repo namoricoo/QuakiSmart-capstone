@@ -4,6 +4,7 @@
 
 html,
 body {
+   padding-top: 30px; 
    margin:0;
    /*height:100%;*/
 }
