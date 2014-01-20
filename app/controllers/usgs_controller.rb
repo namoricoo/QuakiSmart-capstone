@@ -42,8 +42,7 @@ class UsgsController < ApplicationController
     
   end
 
-  def about
-    
+  def about    
   end
 
   def set_magnitude_range

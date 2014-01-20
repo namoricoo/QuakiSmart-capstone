@@ -11,7 +11,7 @@ QuakismartBootstrap::Application.routes.draw do
   
   
   if Rails.env.production?
-    get "/404", :to => "errors#not_found"
-    get "/500", :to => "errors#server_error" 
+    get "/404", to: "errors#not_found"
+    get "/500", to: "errors#server_error" 
   end  
 end
