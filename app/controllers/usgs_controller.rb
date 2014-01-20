@@ -32,8 +32,8 @@ class UsgsController < ApplicationController
     set_magnitude_range
     set_felt_range    
     set_dimension_range
-    @cdi_range = params[:cdi_range]
-    @tsunami = params[:tsunami]   
+    set_cdi_range
+    @tsunami_boolean_value = params[:tsunami] 
     final_quakismart_slider_search    
     @earthquake_hash = get_gmaps4rails_hash(@table_body)
   end
@@ -64,11 +64,25 @@ class UsgsController < ApplicationController
     @dimension_to_value = SliderData.get_to_value(@dimension_range) 
   end
 
+  def set_cdi_range
+    @cdi_range = params[:cdi_range]    
+    @cdi_from_value = SliderData.get_from_value(@cdi_range)
+    @cdi_to_value = SliderData.get_to_value(@cdi_range) 
+  end
+
+   def set_tsunami_range
+     
+   
+  end
+
   def final_quakismart_slider_search
     @table_body = Earthquake.find(:all,
     conditions: {
     mag:  @magnitude_from_value..@magnitude_to_value,
-    felt: @felt_from_value..@felt_to_value })
+    felt: @felt_from_value..@felt_to_value,
+    dmin:  @dimension_from_value..@dimension_to_value,
+    cdi: @cdi_from_value..@cdi_to_value,
+    tsunami: @tsunami_boolean_value })
   end
 
   def get_gmaps4rails_hash(arthquakes)
