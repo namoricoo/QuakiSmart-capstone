@@ -44,6 +44,14 @@ class UsgsController < ApplicationController
     @earthquake_hash = get_gmaps4rails_hash(@table_body)
   end
 
+  def analytics
+    
+  end
+
+  def about
+    
+  end
+
   def get_gmaps4rails_hash(arthquakes)
    earthquake_hash = {}
    earthquake_hash = Gmaps4rails.build_markers(@earthquakes) do |earthquake, marker|
