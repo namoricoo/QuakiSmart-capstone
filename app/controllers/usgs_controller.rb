@@ -34,8 +34,9 @@ class UsgsController < ApplicationController
     set_dimension_range
     set_cdi_range
     @tsunami_boolean_value = params[:tsunami].to_i
-    @table_body = final_quakismart_slider_search    
-    @earthquake_hash = get_gmaps4rails_hash(@table_body)
+    @table_body = final_quakismart_slider_search
+    @earthquakes = final_quakismart_slider_search
+    @earthquake_hash = get_gmaps4rails_hash(@earthquakes)
   end
 
   def analytics
