@@ -11,8 +11,10 @@
 	<%= check_box_tag('tsunami') %>
 	<br />
 	<br />
-	<%= submit_tag("Reset", { :name => 'reset', :id => 'reset_button', :type => "reset",:class => 'btn btn-danger btn-lg' }) %>
-	&nbsp;
+	<%= link_to 'Reset',
+        { :controller => :usgs, :action => :index },
+        { :class => 'btn btn-danger btn-lg' } %>
+    &nbsp;
 	&nbsp;
 	&nbsp;
 	<%= submit_tag("Search",{:class => 'btn btn-success btn-lg'}) %>	
