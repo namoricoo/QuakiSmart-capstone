@@ -87,7 +87,7 @@ class GeoJsonHhelper < ActiveRecord::Base
 
   def format_value(input)
       if input.nil?
-        output = 0
+        input = 0
       else
         input 
       end

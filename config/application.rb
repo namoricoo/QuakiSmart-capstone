@@ -12,7 +12,10 @@ require "sprockets/railtie"
 Bundler.require(:default, Rails.env)
 
 module QuakismartBootstrap
-  class Application < Rails::Application    
+  class Application < Rails::Application 
+    # For Handling MemCachier 
     config.cache_store = :dalli_store
+    # Handling 404 and 500 error pages
+    config.exceptions_app = self.routes
   end
 end

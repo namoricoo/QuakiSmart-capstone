@@ -39,9 +39,7 @@ function dataTableFunction(){
 		// For fixed width containers
 		$('#customers').dataTable({
 		  sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-		  "aaSorting": [[ 0, "desc" ]],
-    	  // sPaginationType: "bootstrap"
-    	  // sPaginationType: "four_button"
+		  "aaSorting": [[ 0, "desc" ]],    	 
     	   sPaginationType:  "full_numbers"
 		});
 	});
