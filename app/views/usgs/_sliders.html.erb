@@ -1,4 +1,6 @@
-<%= form_tag({ :controller => :usgs, :action => :search }, method: "post", class: 'earthquake_sliders') do %>	
+<%= form_tag({ :controller => :usgs, :action => :search },
+		 method: "post", class: 'earthquake_sliders') do %>
+
 	<%= label_tag('magnitude_range','Magnitude') %>	
 	<%= text_field_tag('magnitude_range') %>
 	<%= label_tag('felt_range','Felt') %>	
