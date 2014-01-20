@@ -28,19 +28,13 @@ class UsgsController < ApplicationController
 
   def search
     earthquake_class = EarthquakeClass.new
-    @table_header =  earthquake_class.get_table_header
-     
-    @magnitude_range =  params[:magnitude_range]
-    @magnitude_from_value = SliderData.get_from_value(@magnitude_range);
-    @magnitude_to_value = SliderData.get_to_value(@magnitude_range);
-    
-    @table_body = Earthquake.find_all_by_mag(@magnitude_from_value..@magnitude_to_value)
-    
-    @felt_range = params[:felt_range]
-    @dimension_range = params[:dimension_range]
+    @table_header =  earthquake_class.get_table_header     
+    set_magnitude_range
+    set_felt_range    
+    set_dimension_range
     @cdi_range = params[:cdi_range]
-    @tsunami = params[:tsunami]
-    
+    @tsunami = params[:tsunami]   
+    final_quakismart_slider_search    
     @earthquake_hash = get_gmaps4rails_hash(@table_body)
   end
 
@@ -50,6 +44,31 @@ class UsgsController < ApplicationController
 
   def about
     
+  end
+
+  def set_magnitude_range
+    @magnitude_range =  params[:magnitude_range]
+    @magnitude_from_value = SliderData.get_from_value(@magnitude_range)
+    @magnitude_to_value = SliderData.get_to_value(@magnitude_range)   
+  end
+
+  def set_felt_range
+    @felt_range = params[:felt_range]
+    @felt_from_value = SliderData.get_from_value(@felt_range)
+    @felt_to_value = SliderData.get_to_value(@felt_range)    
+  end
+
+  def set_dimension_range
+    @dimension_range = params[:dimension_range]
+    @dimension_from_value = SliderData.get_from_value(@dimension_range)
+    @dimension_to_value = SliderData.get_to_value(@dimension_range) 
+  end
+
+  def final_quakismart_slider_search
+    @table_body = Earthquake.find(:all,
+    conditions: {
+    mag:  @magnitude_from_value..@magnitude_to_value,
+    felt: @felt_from_value..@felt_to_value })
   end
 
   def get_gmaps4rails_hash(arthquakes)

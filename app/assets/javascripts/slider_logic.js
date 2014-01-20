@@ -12,41 +12,29 @@ function sliderLogic(){
             prettify: false,
             hasGrid: true,
             onChange: function(obj){        // function-callback, is called on every change
-            	 if(previous_from != obj.fromNumber)
-            	 {
-            	 	console.log("from: ", obj.fromNumber);
-            	 	previous_from = obj.fromNumber;
-            	 }
-            	 else if(previous_to != obj.toNumber)
-            	 {
-            	 	console.log("  to: ", obj.toNumber);
-            	 	previous_to =  obj.toNumber;
-            	 }
-            	 else
-            	 {
-            	 	previous_from = obj.fromNumber;
-            	 	previous_to =  obj.toNumber;
-            	 }
-            	
-            	
-        		
-            	
-            	// jQuery.ajax({
-				  // url: usgs/search,
-				  // type: 'Post',
-				  // dataType: 'script',
-				  // data: jQuery("#magnitude_range").val()
-				// });
-            	
-		        //console.log("magnitude max & min values="+ jQuery("#magnitude_range").val());
+	        	 if(previous_from != obj.fromNumber)
+	        	 {
+	        	 	console.log("from: ", obj.fromNumber);
+	        	 	previous_from = obj.fromNumber;
+	        	 }
+	        	 else if(previous_to != obj.toNumber)
+	        	 {
+	        	 	console.log("  to: ", obj.toNumber);
+	        	 	previous_to =  obj.toNumber;
+	        	 }
+	        	 else
+	        	 {
+	        	 	previous_from = obj.fromNumber;
+	        	 	previous_to =  obj.toNumber;
+	        	 }            	
 		    }
         });
         
               
         $("#felt_range").ionRangeSlider({
-            min: 44,
+            min: 0,
             max: 843,
-            from: 144,
+            from: 0,
             to:544,
             type: 'double',
             step: 10,
