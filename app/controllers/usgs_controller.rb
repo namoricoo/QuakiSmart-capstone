@@ -48,25 +48,25 @@ class UsgsController < ApplicationController
   def about    
   end
 
-  def set_magnitude_range
+  def get_magnitude_range
     @magnitude_range =  params[:magnitude_range]
     @magnitude_from_value = SliderData.get_from_value(@magnitude_range)
     @magnitude_to_value = SliderData.get_to_value(@magnitude_range)   
   end
 
-  def set_felt_range
+  def get_felt_range
     @felt_range = params[:felt_range]
     @felt_from_value = SliderData.get_from_value(@felt_range)
     @felt_to_value = SliderData.get_to_value(@felt_range)    
   end
 
-  def set_dimension_range
+  def get_dimension_range
     @dimension_range = params[:dimension_range]
     @dimension_from_value = SliderData.get_from_value(@dimension_range)
     @dimension_to_value = SliderData.get_to_value(@dimension_range) 
   end
 
-  def set_cdi_range
+  def get_cdi_range
     @cdi_range = params[:cdi_range]    
     @cdi_from_value = SliderData.get_from_value(@cdi_range)
     @cdi_to_value = SliderData.get_to_value(@cdi_range) 
