@@ -6,7 +6,9 @@ class UsgsController < ApplicationController
   #layout 'test_template'
   def initialize_varialbles
     @magnitude_from = 0.0
-    @magnitude_to = 0.0 
+    @magnitude_to = 0.0
+    @current_year = Time.new
+    @current_year =  @current_year.year
   end
 
   def index   
