@@ -5,8 +5,8 @@ function sliderLogic(){
         $("#magnitude_range").ionRangeSlider({
             min: -1.0,
             max: 10.0,
-            from: 0.2,
-            to: 6,
+            from: gon.mag_from_value,
+            to: gon.mag_to_value,
             type: 'double',
             step: 0.1,
             prettify: false,
