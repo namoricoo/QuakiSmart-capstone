@@ -31,10 +31,10 @@ class UsgsController < ApplicationController
   def search
     earthquake_class = EarthquakeClass.new
     @table_header =  earthquake_class.get_table_header     
-    set_magnitude_range
-    set_felt_range    
-    set_dimension_range
-    set_cdi_range
+    get_magnitude_range
+    get_felt_range    
+    get_dimension_range
+    get_cdi_range
     @tsunami_boolean_value = params[:tsunami].to_i
     @table_body = final_quakismart_slider_search
     @earthquakes = final_quakismart_slider_search
