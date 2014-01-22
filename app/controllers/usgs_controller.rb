@@ -15,8 +15,6 @@ class UsgsController < ApplicationController
      # empty out the table for each new visit.
     initialize_table
     
-    initialize_magnitude_range
-    
     earthquake_class = EarthquakeClass.new
     @table_header =  earthquake_class.get_table_header
     
@@ -50,28 +48,10 @@ class UsgsController < ApplicationController
   def about    
   end
 
-  def initialize_magnitude_range
-     @magnitude_from_value = -1
-     @magnitude_to_value = 10
-     gon.mag_from_value = @magnitude_from_value
-     gon.mag_to_value =  @magnitude_to_value
-  end
-
-  def set_magnitude_range
-    
-  end
-
   def get_magnitude_range
     @magnitude_range =  params[:magnitude_range]
     @magnitude_from_value = SliderData.get_from_value(@magnitude_range)
     @magnitude_to_value = SliderData.get_to_value(@magnitude_range)   
-  end
-
-  def initialize_felt_range
-     @magnitude_from_value = -1
-     @magnitude_to_value = 10
-     gon.mag_from_value = @magnitude_from_value
-     gon.mag_to_value =  @magnitude_to_value
   end
 
   def get_felt_range
