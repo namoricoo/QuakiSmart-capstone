@@ -11,6 +11,19 @@ class UsgsController < ApplicationController
     @current_year =  @current_year.year
   end
 
+  def get_local_data
+    file_name = 'sample_earthquake.geojson'
+    geo = GeoJsonHhelper.new
+    geo.get_local_json_file(file_name)
+  end
+  
+  def get_remote_data(geo)
+    first_half ='http://earthquake.usgs.gov/earthquakes/'
+    second_half = 'feed/v1.0/summary/2.5_day.geojson'
+    file_path = "#{first_half}#{second_half}"   
+    geo.get_remote_json_file(file_path)
+    # GeoJsonHhelper.new.get_remote_json_file(file_path).should_not be_nil
+  end  
   def index   
      # empty out the table for each new visit.
     initialize_table
@@ -18,9 +31,10 @@ class UsgsController < ApplicationController
     earthquake_class = EarthquakeClass.new
     @table_header =  earthquake_class.get_table_header
     
-    file_name = 'sample_earthquake.geojson'
+    #file_name = 'sample_earthquake.geojson'
     geo = GeoJsonHhelper.new
-    result = geo.get_local_json_file(file_name)
+    #result = geo.get_local_json_file(file_name)
+    result = get_remote_data(geo)
     result_hash = geo.get_array_earthquake_hash(result)
     @table_body = geo.set_earthquake_features(result_hash)
     seed_database_with_data(@table_body)    
