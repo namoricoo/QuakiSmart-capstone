@@ -11,9 +11,8 @@ class UsgsController < ApplicationController
     @current_year =  @current_year.year
   end
 
-  def get_local_data
-    file_name = 'sample_earthquake.geojson'
-    geo = GeoJsonHhelper.new
+  def get_local_data(geo)
+    file_name = 'sample_earthquake.geojson'   
     geo.get_local_json_file(file_name)
   end
   
@@ -21,19 +20,13 @@ class UsgsController < ApplicationController
     first_half ='http://earthquake.usgs.gov/earthquakes/'
     second_half = 'feed/v1.0/summary/2.5_day.geojson'
     file_path = "#{first_half}#{second_half}"   
-    geo.get_remote_json_file(file_path)
-    # GeoJsonHhelper.new.get_remote_json_file(file_path).should_not be_nil
+    geo.get_remote_json_file(file_path)    
   end  
-  def index   
-     # empty out the table for each new visit.
-    initialize_table
-    
+  def index     
+    initialize_table    
     earthquake_class = EarthquakeClass.new
-    @table_header =  earthquake_class.get_table_header
-    
-    #file_name = 'sample_earthquake.geojson'
-    geo = GeoJsonHhelper.new
-    #result = geo.get_local_json_file(file_name)
+    @table_header =  earthquake_class.get_table_header   
+    geo = GeoJsonHhelper.new    
     result = get_remote_data(geo)
     result_hash = geo.get_array_earthquake_hash(result)
     @table_body = geo.set_earthquake_features(result_hash)
@@ -112,6 +105,7 @@ class UsgsController < ApplicationController
   end
 
   def initialize_table()
+     # empty out the table for each new visit.
      Earthquake.destroy_all
   end
 end
