@@ -5,12 +5,14 @@ require_relative '../models/geo_json_helper.rb'
 class UsgsController < ApplicationController
 
   def initialize_varialbles
-    @magnitude_from_value = 0
+    @magnitude_from_value = -1
     @magnitude_to_value = 10
     @felt_from_value = 0
     @felt_to_value = 843
     @dimension_from_value = 0
     @dimension_to_value = 7
+    @cdi_from_value = 0
+    @cdi_to_value = 10
   end
 
   def get_local_data(geo)

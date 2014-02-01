@@ -55,9 +55,7 @@ function sliderLogic(){
         
          $("#cdi_range").ionRangeSlider({
             min: 0.0,
-            max: 10.0,
-            from: 2.0,
-            to: 6.0,
+            max: 10.0,            
             type: 'double',
             step: 0.1,
             prettify: false,
