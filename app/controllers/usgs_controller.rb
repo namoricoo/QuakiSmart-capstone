@@ -5,8 +5,8 @@ require_relative '../models/geo_json_helper.rb'
 class UsgsController < ApplicationController
   #layout 'test_template'
   def initialize_varialbles
-    @magnitude_from_value = 0.5
-    @magnitude_to_value = 9.0
+    @magnitude_from_value = 0
+    @magnitude_to_value = 10
    
   end
 
