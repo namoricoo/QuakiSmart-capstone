@@ -45,8 +45,8 @@ function sliderLogic(){
         });
         
          $("#dimension_range").ionRangeSlider({
-            min: 0.4,
-            max: 7.0,            
+            min: 0,
+            max: 10.0,            
             type: 'double',
             step: 0.5,
             prettify: false,
@@ -61,6 +61,5 @@ function sliderLogic(){
             prettify: false,
             hasGrid: true            
         });
-
     });
 }

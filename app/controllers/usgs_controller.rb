@@ -13,6 +13,7 @@ class UsgsController < ApplicationController
     @dimension_to_value = 7
     @cdi_from_value = 0
     @cdi_to_value = 10
+    @tsunami_boolean_value = 0
   end
 
   def get_local_data(geo)
