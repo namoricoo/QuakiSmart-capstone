@@ -3,24 +3,26 @@ require_relative '../models/earthquake_class.rb'
 require_relative '../models/geo_json_helper.rb'
 # UsgsController
 class UsgsController < ApplicationController
-  #layout 'test_template'
+
   def initialize_varialbles
     @magnitude_from_value = 0
     @magnitude_to_value = 10
-   
+    @felt_from_value = 0
+    @felt_to_value = 843
   end
 
   def get_local_data(geo)
     file_name = 'sample_earthquake.geojson'   
     geo.get_local_json_file(file_name)
   end
-  
+
   def get_remote_data(geo)
     first_half ='http://earthquake.usgs.gov/earthquakes/'
     second_half = 'feed/v1.0/summary/2.5_day.geojson'
     file_path = "#{first_half}#{second_half}"   
     geo.get_remote_json_file(file_path)    
-  end  
+  end
+
   def index     
     initialize_table
     initialize_varialbles

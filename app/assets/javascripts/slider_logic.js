@@ -31,9 +31,7 @@ function sliderLogic(){
               
         $("#felt_range").ionRangeSlider({
             min: 0,
-            max: 843,
-            from: 0,
-            to:544,
+            max: 843,            
             type: 'double',
             step: 10,
             prettify: false,

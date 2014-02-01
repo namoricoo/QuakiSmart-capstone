@@ -3,7 +3,7 @@
 	<%= label_tag('magnitude_range','Magnitude') %>	
 	<%= text_field_tag('magnitude_range',"#{@magnitude_from_value};#{@magnitude_to_value}") %>
 	<%= label_tag('felt_range','Felt') %>	
-	<%= text_field_tag('felt_range') %>
+	<%= text_field_tag('felt_range',"#{@felt_from_value};#{@felt_to_value}") %>
 	<%= label_tag('dimension_range','Dimension') %>	
 	<%= text_field_tag('dimension_range') %>
 	<%= label_tag('cdi_range','Cdi') %>	
