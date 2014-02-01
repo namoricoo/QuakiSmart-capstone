@@ -4,9 +4,7 @@ function sliderLogic(){
 		var previous_to = 0;
         $("#magnitude_range").ionRangeSlider({
             min: -1.0,
-            max: 10.0,
-            from: 0.2,
-            to: 6,
+            max: 10.0,           
             type: 'double',
             step: 0.1,
             prettify: false,
@@ -56,11 +54,7 @@ function sliderLogic(){
             type: 'double',
             step: 0.5,
             prettify: false,
-            hasGrid: true,
-            onChange: function(obj){        // function-callback, is called on every change
-            	console.log("dimension max "+ jQuery("#dimension_range").max);
-		        console.log("dimension max & min values="+ jQuery("#dimension_range").val());
-		    }
+            hasGrid: true,           
         });
         
          $("#cdi_range").ionRangeSlider({

@@ -5,10 +5,9 @@ require_relative '../models/geo_json_helper.rb'
 class UsgsController < ApplicationController
   #layout 'test_template'
   def initialize_varialbles
-    @magnitude_from = 0.0
-    @magnitude_to = 0.0
-    @current_year = Time.new
-    @current_year =  @current_year.year
+    @magnitude_from_value = 0.5
+    @magnitude_to_value = 9.0
+   
   end
 
   def get_local_data(geo)
@@ -23,7 +22,8 @@ class UsgsController < ApplicationController
     geo.get_remote_json_file(file_path)    
   end  
   def index     
-    initialize_table    
+    initialize_table
+    initialize_varialbles
     earthquake_class = EarthquakeClass.new
     @table_header =  earthquake_class.get_table_header   
     geo = GeoJsonHhelper.new    
