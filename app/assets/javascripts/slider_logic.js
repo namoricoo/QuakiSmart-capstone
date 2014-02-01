@@ -46,13 +46,11 @@ function sliderLogic(){
         
          $("#dimension_range").ionRangeSlider({
             min: 0.4,
-            max: 7.0,
-            from: 1,
-            to: 5,
+            max: 7.0,            
             type: 'double',
             step: 0.5,
             prettify: false,
-            hasGrid: true,           
+            hasGrid: true           
         });
         
          $("#cdi_range").ionRangeSlider({
@@ -63,10 +61,7 @@ function sliderLogic(){
             type: 'double',
             step: 0.1,
             prettify: false,
-            hasGrid: true,
-            onChange: function(obj){        // function-callback, is called on every change
-		        console.log("cdi max & min values="+ jQuery("#cdi_range").val());
-		    }
+            hasGrid: true            
         });
 
     });

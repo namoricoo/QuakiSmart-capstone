@@ -9,6 +9,8 @@ class UsgsController < ApplicationController
     @magnitude_to_value = 10
     @felt_from_value = 0
     @felt_to_value = 843
+    @dimension_from_value = 0
+    @dimension_to_value = 7
   end
 
   def get_local_data(geo)
