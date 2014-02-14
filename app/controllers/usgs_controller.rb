@@ -10,7 +10,7 @@ class UsgsController < ApplicationController
     @felt_from_value = 0
     @felt_to_value = 843
     @dimension_from_value = 0
-    @dimension_to_value = 7
+    @dimension_to_value = 10
     @cdi_from_value = 0
     @cdi_to_value = 10
     @tsunami_boolean_value = 0
