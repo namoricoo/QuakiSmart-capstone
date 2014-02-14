@@ -22,6 +22,7 @@ group :test do
   gem 'growl'
   gem 'guard-rspec'
   gem 'rspec-rails'
+  gem 'launchy'
 end
 
 group :doc do
