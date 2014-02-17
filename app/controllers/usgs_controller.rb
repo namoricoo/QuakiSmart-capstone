@@ -1,6 +1,6 @@
 require_relative '../../lib/tasks/slider_data.rb'
-require_relative '../models/earthquake_class.rb'
-require_relative '../models/geo_json_helper.rb'
+require_relative '../../lib/earthquake_json/earthquake_class.rb'
+require_relative '../../lib/earthquake_json/geo_json_helper.rb'
 # UsgsController
 class UsgsController < ApplicationController
 

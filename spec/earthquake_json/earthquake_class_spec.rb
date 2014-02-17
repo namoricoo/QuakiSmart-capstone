@@ -1,5 +1,5 @@
-require_relative '../../app/models/earthquake_class.rb'
-require_relative 'spec_helper.rb'
+require_relative '../../lib/earthquake_json/earthquake_class.rb'
+require_relative '../spec_helper.rb'
 # Test Load File into an Array
 describe EarthquakeClass do
   it 'transforms input into hash {latitude: number,longitude: number}' do
