@@ -1,6 +1,7 @@
 QuakismartBootstrap::Application.routes.draw do  
   
   root to: 'usgs#index'
+  get 'usgs/index'
   get 'usgs/jquery'
   get 'usgs/jqueryui'
   get 'usgs/analytics'
