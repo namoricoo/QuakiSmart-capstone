@@ -101,6 +101,7 @@ class UsgsController < ApplicationController
    earthquake_hash = Gmaps4rails.build_markers(@earthquakes) do |earthquake, marker|
       marker.lat earthquake.latitude
       marker.lng earthquake.longitude
+      marker.infowindow earthquake.place
     end
     earthquake_hash    
   end
