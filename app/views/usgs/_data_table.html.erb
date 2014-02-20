@@ -11,7 +11,7 @@
 		   	 <tr>
 		   	 <%  hash.each do |key, value| %>
 		   	   <% if "#{key}" == "place" %>		   	      
-                  <td><%= link_to "#{value}",{ :controller => :usgs, :action => :where, :id => "#{value}"}%></td>
+                  <td><%= link_to "#{value}",{ :controller => :usgs, :action => :where, :id => "#{value}"},target: '_blank'%></td>
                <% else %>
                    <td><%= "#{value}" %></td>
                <% end %>		      

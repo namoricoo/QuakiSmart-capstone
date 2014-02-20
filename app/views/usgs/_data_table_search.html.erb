@@ -10,7 +10,7 @@
   		<%  @table_body.each do |earthquake| %>
 	  		<tr>
 	  			<td><%= earthquake.mag %></td>
-	  			<td><%= link_to earthquake.place,{ :controller => :usgs, :action => :where, :id => earthquake.place }%></td>	  			
+	  			<td><%= link_to earthquake.place,{ :controller => :usgs, :action => :where, :id => earthquake.place }, target: '_blank'%></td>	  			
 	  			<td><%= earthquake.latitude %></td>
 	  			<td><%= earthquake.longitude %></td>
 	  			<td><%= earthquake.tsunami %></td>
