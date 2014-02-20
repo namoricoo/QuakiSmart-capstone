@@ -1,7 +1,8 @@
 function sliderLogic(){
 	 $(document).ready(function(){
-		var previous_from = 0;
-		var previous_to = 0;
+	 	var previous_from,previous_to;
+		previous_from = 0;
+		previous_to = 0;
         $("#magnitude_range").ionRangeSlider({
             min: -1.0,
             max: 10.0,           

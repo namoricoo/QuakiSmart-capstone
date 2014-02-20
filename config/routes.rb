@@ -6,6 +6,7 @@ QuakismartBootstrap::Application.routes.draw do
   get 'usgs/jqueryui'
   get 'usgs/analytics'
   get 'usgs/about'
+  get 'usgs/where'
   post 'usgs/search'
   get "errors/not_found"
   get "errors/server_error"

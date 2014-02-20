@@ -15,3 +15,9 @@
  *= require dataTables/jquery.dataTables.bootstrap3
  *= require_tree .
  */
+
+/*#5F7081*/
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #5F7081;
+}

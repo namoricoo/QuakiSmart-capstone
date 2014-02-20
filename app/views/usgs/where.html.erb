@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="span12">
+        <%= render(:partial => "google_map") %>
+    </div>
+</div>
+<br />
+<br />
+<div class="hero-unit">
+  <h1><%=  @address %></h1>
+  <%  @table_body.each do |earthquake| %>
+     <dl class="dl-horizontal">
+      <dt >Magnitude:</dt>
+      <dd><%= earthquake.mag %></dd>
+      <br />
+      <dt>Latitude:</dt>
+      <dd><%= earthquake.latitude %></dd>
+      <br />
+      <dt>Longitude:</dt>
+      <dd><%= earthquake.longitude %></dd>
+      <br />
+      <dt>Tsunami:</dt>
+      <% if earthquake.tsunami == 0 %>
+        <dd>FALSE</dd>
+      <% else %>
+        <dd>TRUE</dd>
+      <% end %>
+      <br />
+      <dt>Felt:</dt>
+      <dd><%= earthquake.felt %></dd>
+      <br />
+      <dt>Cdi:</dt>
+      <dd><%= earthquake.cdi %></dd>
+      <br />
+      <dt>Dimension:</dt>
+      <dd><%= earthquake.dmin %></dd>
+    </dl>
+  <% end %>  
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

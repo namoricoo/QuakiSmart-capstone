@@ -33,7 +33,8 @@ class UsgsController < ApplicationController
     initialize_varialbles
     earthquake_class = EarthquakeClass.new
     @table_header =  earthquake_class.get_table_header   
-    geo = GeoJsonHhelper.new    
+    geo = GeoJsonHhelper.new
+    #result = get_local_data(geo)
     result = get_remote_data(geo)
     result_hash = geo.get_array_earthquake_hash(result)
     @table_body = geo.set_earthquake_features(result_hash)
@@ -55,8 +56,28 @@ class UsgsController < ApplicationController
     @earthquake_hash = get_gmaps4rails_hash(@earthquakes)
   end
 
-  def analytics
-    
+  def final_quakismart_where_search(address)
+    Earthquake.find(:all, conditions: {place: address })
+  end
+
+  def  set_where_fields(current_earthquake)
+    current_earthquake.each do |earthquake|
+       puts "-----------------#{earthquake}"
+    end
+  end
+
+  def where
+    @address =  params[:id]
+    earthquake_class = EarthquakeClass.new
+    @table_header =  earthquake_class.get_table_header
+    @current_earthquake = final_quakismart_where_search("#{@address}")
+    @table_body = final_quakismart_where_search("#{@address}")
+     puts "-----------  #{@current_earthquake}"
+    @earthquake_hash = get_gmaps4rails_hash(@current_earthquake)
+    set_where_fields(@current_earthquake)
+  end
+
+  def analytics    
   end
 
   def about    
@@ -96,9 +117,9 @@ class UsgsController < ApplicationController
     cdi: @cdi_from_value..@cdi_to_value })
   end
 
-  def get_gmaps4rails_hash(arthquakes)
+  def get_gmaps4rails_hash(earthquakes)
    earthquake_hash = {}
-   earthquake_hash = Gmaps4rails.build_markers(@earthquakes) do |earthquake, marker|
+   earthquake_hash = Gmaps4rails.build_markers(earthquakes) do |earthquake, marker|
       marker.lat earthquake.latitude
       marker.lng earthquake.longitude
       marker.infowindow earthquake.place

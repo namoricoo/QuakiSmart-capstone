@@ -1,5 +1,35 @@
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Earthquake field descriptions</h3>
+  </div>
+  <div class="modal-body">
+    <dl class="dl-horizontal">
+      <dt >Magnitude:</dt>
+      <dd>Decimal between -1.0 to 10.0 the magnitue for the event.</dd>
+      <br />
+      <dt>Felt:</dt>     
+      <dd>Between 44 to 843 the total number of felt reports submitted to the DYFI? system</dd>
+       <br />
+      <dt>dmin:</dt>
+      <dd>Decimal between 0.4 to 7.0 Horizontal distance from the epicenter to the nearest station (in degrees).</dd>
+       <br />
+      <dt>Cdi:</dt>
+      <dd>Decimal between 0.0 to 10.0  The maximum reported intensity for the event.</dd>
+       <br />
+      <dt>Tsunami:</dt>
+      <dd>Checked for large events in oceanic regions and unchecked otherwise.</dd> 
+    </dl>     
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
 <%= form_tag({ :controller => :usgs, :action => :search },
 		 method: "post", class: 'earthquake_sliders') do %>
+	
 	<%= label_tag('magnitude_range','Magnitude') %>	
 	<%= text_field_tag('magnitude_range',"#{@magnitude_from_value};#{@magnitude_to_value}") %>
 	<%= label_tag('felt_range','Felt') %>	
